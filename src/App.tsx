@@ -1,5 +1,12 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
+
+interface TrailPoint {
+  x: number;
+  y: number;
+  id: number;
+  opacity: number;
+}
 
 function App() {
   const [sealing, setSealing] = useState(false);
@@ -7,10 +14,10 @@ function App() {
   const [open, setOpen] = useState(false);
   const [letterMove, setLetterMove] = useState(false);
 
-  const [trail, setTrail] = useState([]);
+  const [trail, setTrail] = useState<TrailPoint[]>([]);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       const newTrail = {
         x: e.clientX,
         y: e.clientY,
@@ -79,7 +86,7 @@ function App() {
         <div
           className={`sealingWax ${sealing ? 'clicked' : ''}${sealingHover ? 'mouseEnter' : ''}`}
           onClick={() => setSealing(true)}
-        // onMouseEnter={() => setSealingHover(true)}
+          onMouseEnter={() => setSealingHover(true)}
         // onMouseLeave={() => setSealingHover(false)}
         />
         {/* <div className={`sealingWax ${sealingHover ? 'mouseEnter' : ''}`} /> */}
