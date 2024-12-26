@@ -10,7 +10,6 @@ interface TrailPoint {
 
 function App() {
   const [sealing, setSealing] = useState(false);
-  const [sealingHover, setSealingHover] = useState(false);
   const [open, setOpen] = useState(false);
   const [letterMove, setLetterMove] = useState(false);
 
@@ -84,10 +83,8 @@ function App() {
       ))}
       <div className='envelope' style={{ animation: open ? 'envelopeMove' : 'initEnvelope 2s' }}>
         <div
-          className={`sealingWax ${sealing ? 'clicked' : ''}${sealingHover ? 'mouseEnter' : ''}`}
+          className={`sealingWax ${sealing ? 'clicked' : ''}`}
           onClick={() => setSealing(true)}
-          onMouseEnter={() => setSealingHover(true)}
-        // onMouseLeave={() => setSealingHover(false)}
         />
         {/* <div className={`sealingWax ${sealingHover ? 'mouseEnter' : ''}`} /> */}
         <div className='envelope-top' style={{ animationName: open ? 'envelopeOpen' : 'none', zIndex: letterMove ? '-2' : '1' }} />
