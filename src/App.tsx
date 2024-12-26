@@ -89,7 +89,7 @@ function App() {
         {/* <div className={`sealingWax ${sealingHover ? 'mouseEnter' : ''}`} /> */}
         <div className='envelope-top' style={{ animationName: open ? 'envelopeOpen' : 'none', zIndex: letterMove ? '-2' : '1' }} />
         <div className='envelope-bottom' />
-        <div className={`letter ${letterMove ? 'active' : ''}`} style={{ color: 'black' }} >  </div>
+        <div className={`letter ${letterMove ? 'active' : ''}`} style={{ color: 'black' }} > love </div>
       </div>
     </div>
   )
